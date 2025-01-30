@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const categoryLinks = document.querySelectorAll("nav a");
 
+    displayCategoryInfo("HTML");
+
     categoryLinks.forEach(link => {
         link.addEventListener("click", function(event) {
             event.preventDefault();
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function displayCategoryInfo(category) {
-        const selectedCategory = resources.find(item => item.category === category);
+        const selectedCategory = resources.find(item => item.category === category); /*Bytte ut med filter!!*/
         const categoryInfoContainer = document.getElementById("category-info");
 
         if (selectedCategory) {
@@ -32,3 +34,5 @@ document.addEventListener("DOMContentLoaded", function() {
         } 
     }
 });
+
+/*Link til det jeg har spurt ChatGPT om:*/
