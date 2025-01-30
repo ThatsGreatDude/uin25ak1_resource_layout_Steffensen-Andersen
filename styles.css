@@ -12,4 +12,48 @@
 body {
     background-color: var(--lightgrey);
     font-family: var(--font);
+    display: flex; /*https://www.youtube.com/watch?v=7I6pb2MHRQg*/
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    background-color: var(--blue);
+}
+
+nav ul {
+    list-style-type: none; /*https://www.w3schools.com/cssref/pr_list-style-type.php*/
+    display: flex;
+    align-items: center;  /*https://www.youtube.com/watch?v=qJVVZYTYA9U*/
+    justify-content: center;
+}
+
+nav a { /*Fiks dette!!*/
+    display: inline-block;
+    padding: 1rem; 
+    color: var(--white);
+    text-decoration: none;
+    box-sizing:  border-box;
+    height: 70px;
+    width: 170px;
+    margin-right: 20px;
+    background-color: var(---blue); 
+}
+
+nav a.selected {
+    color: var(--blue); 
+    background-color: var(--white); 
+}
+
+#category-info-container {
+    list-style-type: none; /*Må fiksess på*/
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    background-color: #fff; 
+}
+
+#category-info {
+    width: 850px; 
+    padding: 10px; 
 }
