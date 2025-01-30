@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 :root {
     --blue: #2A324B;
@@ -17,15 +17,14 @@ body {
     align-items: center;
 }
 
-nav {
-    background-color: var(--blue);
-}
 
 nav ul {
     list-style-type: none; /*https://www.w3schools.com/cssref/pr_list-style-type.php*/
     display: flex;
     align-items: center;  /*https://www.youtube.com/watch?v=qJVVZYTYA9U*/
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav a { /*Fiks dette!!*/
@@ -37,7 +36,7 @@ nav a { /*Fiks dette!!*/
     height: 70px;
     width: 170px;
     margin-right: 20px;
-    background-color: var(---blue); 
+    background-color: var(--blue); 
 }
 
 nav a.selected {
@@ -56,4 +55,8 @@ nav a.selected {
 #category-info {
     width: 850px; 
     padding: 10px; 
+}
+
+nav a[href*="#"] { /*Hjelp av chatgpt*/
+    font-weight: bold;
 }
