@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     categoryLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
-            const category = this.getAttribute("href").substring(1);
+            const category = this.dataset.category; 
+
             displayCategoryInfo(category);
 
             categoryLinks.forEach(link => link.classList.remove("selected"));
