@@ -45,7 +45,7 @@ nav a {
     text-decoration: none;
     box-sizing:  border-box;
     height: 70px;
-    width: 170px;
+    width: 180px;
     margin-right: 20px;
     background-color: var(--blue); 
     white-space: nowrap;
@@ -67,7 +67,7 @@ nav a.selected {
 
 #category-info {
     width: 850px; 
-    padding: 10px; 
+    padding: 30px; 
 }
 
 a[href^="#"] {
