@@ -1,38 +1,36 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const categoryLinks = document.querySelectorAll("nav a");
-
-    displayCategoryInfo("HTML");
-
-    categoryLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const category = this.getAttribute("href").substring(1);
-            displayCategoryInfo(category);
-            
-            categoryLinks.forEach(link => {
-                link.classList.remove('selected');
-            });
-            
-            this.classList.add('selected');
-        });
-    });
+    const categoryInfoContainer = document.getElementById("category-info");
 
     function displayCategoryInfo(category) {
-        const selectedCategory = resources.find(item => item.category === category); /*Bytte ut med filter!!*/
-        const categoryInfoContainer = document.getElementById("category-info");
+        const selectedResources = resources.filter(item => item.category === category); 
 
-        if (selectedCategory) {
-            categoryInfoContainer.innerHTML = `
-                <h2>${selectedCategory.category}</h2>
-                <p>${selectedCategory.text}</p>
+        if (selectedResources.length > 0) {
+            const resourceHTML = selectedResources.map(resource => `
+                <h2>${resource.category}</h2>
+                <p>${resource.text}</p>
                 <ul>
-                    ${selectedCategory.sources.map(source => `
+                    ${resource.sources.map(source => `
                         <li><a href="${source.url}" target="_blank">${source.title}</a></li>
                     `).join('')}
                 </ul>
-            `;
-        } 
-    }
-});
+            `).join('');
 
-/*Link til det jeg har spurt ChatGPT om:*/
+            categoryInfoContainer.innerHTML = resourceHTML;
+        }
+    }
+
+    // Vis HTML-ressurser når siden lastes
+    displayCategoryInfo("HTML");
+
+    categoryLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const category = this.getAttribute("href").substring(1);
+            displayCategoryInfo(category);
+
+            categoryLinks.forEach(link => link.classList.remove("selected"));
+            this.classList.add("selected");
+        });
+    });
+});

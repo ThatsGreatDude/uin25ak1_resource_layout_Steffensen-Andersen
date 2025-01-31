@@ -76,7 +76,7 @@ const resources = [
         ]
     },
     {
-        category: "Sanity and headless CMS",
+        category: "Sanity_and_headless_CMS", /*Endret her og i index.html slik at jeg ikke får error i html når jeg validerer*/
         text: "Sanity er et headless CMS som står for innholdsadministrasjon. Innhold hentes inn i applikasjoner via GROQ-spørringer.",
         sources: [
             {
