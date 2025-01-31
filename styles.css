@@ -22,7 +22,7 @@ main {
 }
 
 nav {
-    background-color: none; 
+    background-color: transparent; 
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -36,8 +36,10 @@ nav ul {
     padding: 0;
 }
 
-nav a { /*Fiks dette!!*/
-    display: inline-block;
+nav a {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
     padding: 1rem; 
     color: var(--white);
     text-decoration: none;
@@ -46,16 +48,17 @@ nav a { /*Fiks dette!!*/
     width: 170px;
     margin-right: 20px;
     background-color: var(--blue); 
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 nav a.selected {
     color: var(--blue); 
     background-color: var(--white); 
+    font-weight: bold;
 }
 
 #category-info-container {
-    list-style-type: none; /*Må fiksess på*/
+    list-style-type: none; 
     display: flex;
     align-items: center;  
     justify-content: center;

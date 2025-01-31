@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedResources = resources.filter(item => item.category === category); 
 
         if (selectedResources.length > 0) {
-            const resourceHTML = selectedResources.map(resource => `
+            const resourceHTML = selectedResources.map(resource => ` 
                 <h2>${resource.category}</h2>
                 <p>${resource.text}</p>
                 <ul>
-                    ${resource.sources.map(source => `
+                    ${resource.sources.map(source => ` 
                         <li><a href="${source.url}" target="_blank">${source.title}</a></li>
                     `).join('')}
                 </ul>
@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Vis HTML-ressurser når siden lastes
+    const firstLink = categoryLinks[0]; 
+    firstLink.classList.add("selected");
+
     displayCategoryInfo("HTML");
 
     categoryLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
-            const category = this.dataset.category; 
+            const category = this.dataset.category;
 
             displayCategoryInfo(category);
 
@@ -35,3 +37,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+/*Chatgpt: https://chatgpt.com/share/679c9432-596c-800d-84b1-089c51a8d1b3  */
